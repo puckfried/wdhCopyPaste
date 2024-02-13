@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Kopieren, Ausschneiden, Einfügen</title>
+</head>
+<body>
+    <h1>Übung Tastatur II</h1>
+    <main>
+        <div class="hs-container hide">
+            <span>Highscore:</span>
+            <span id="score"></span>
+        </div>
+        <!--Intro component (disabled during work)  -->
+        <div class="intro">
+            <h2>Kopieren, Ausschneiden, Einfügen</h2>
+            <h3>Ziel</h3>
+            <p>Ordnen Sie die durcheinander gewürfelten Textblöcke in die korrekte Reihenfolge und duplizieren Sie bestimmte Blöcke, um eine strukturierte Abfolge von insgesamt 25 Blöcken zu erstellen. Alle Aktionen sollen ausschließlich mit Tastaturbefehlen durchgeführt werden.</p>
+            <h3>Aufgaben</h3>
+            <ol>
+                <li><b>Markieren:</b> Verwenden Sie die SHIFT-Taste in Kombination mit den Pfeiltasten, um einen Textblock zu markieren.</li>
+                <li><b>Ausschneiden und Einfügen:</b> 
+                    <ul>
+                        <li>Um einen markierten Textblock auszuschneiden, drücken Sie STRG+X.</li>
+                        <li>Navigieren Sie mit den Pfeiltasten zu der Stelle, an der der Textblock eingefügt werden soll.</li>
+                        <li>Drücken Sie STRG+V, um den Textblock an der gewählten Stelle einzufügen.</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Kopieren und Einfügen:</b>
+                    <ul>
+                        <li>Einige Blöcke müssen dupliziert werden. Markieren Sie diese Blöcke wie beschrieben.</li>
+                        <li>Drücken Sie STRG+C, um den markierten Textblock zu kopieren.</li>
+                        <li>Navigieren Sie zur Einfügestelle und drücken Sie STRG+V, um eine Kopie des Textblocks einzufügen.</li>
+                    </ul>
+                </li>
+            </ol>
+            <p>Wenn alle Blöcke korrekt angeordnet sind, könnt ihr am Ende der Seite den Test beenden und eure Zeit sehen.<br> <em>  Mach den Test öfter und versuche <b>schneller</b> zu werden.  </em></p>
+
+        </div>
+        <div class="start">
+            <h2>Wenn du bereit bist, klick auf START</h2>
+            <button class="startstopBtn" onclick="start()">Start</button>
+        </div>
+
+        <!-- Form component (disabled when started)-->
+        <form action="#" onsubmit="submitForm(event)" class="hide">
+            <section class="inputBlock">
+               <h2>Ordne die Textblöcke</h2>
+               <span class="tip">| STRG+C - Kopieren | STRG+V - Einfügen | STRG+X - Ausschneiden | SHIFT+Pfeiltasten - Markieren |</span>
+               <label for="text">Hier klicken um Cursor in Textfeld zu setzen. Naviagtion nur mit Pfeiltasten.</label>
+               
+               <textarea name="text" id="text">
+                </textarea>
+
+            </section>
+            <h3 class="wrongBox hide">Leider noch nicht korrekt, probier es erneut</h3>
+            <button onclick="stop()" class="startstopBtn">Überprüfen</button>
+        </form>
+        
+        <!-- Finsh Component (only visible at end) -->
+        <div class="finished hide">
+            <h2>Super du hast es gelöst!</h2>
+            <p>Deine Zeit: <span class="time"></span> </p>
+            <h3 class="hide">Neuer Highscore :-) </h3>
+            <button onclick="startAgain()" class="startstopBtn">Nochmal?</button>
+        </div>
+        <script src="./script.js"></script>
+    </main>
+    </body>
+</html>
