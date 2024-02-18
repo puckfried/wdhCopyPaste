@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Copy, Cut, Paste</title>
+</head>
+<body>
+    <nav>
+        <a href="./">
+            <img src="./icon/ger.jpg" alt="flag icon">
+            DE
+        </a>
+    </nav>
+    <h1>Keyboard exercise II - recap</h1>
+    <main>
+        <div class="hs-container hide">
+            <span>Highscore:</span>
+            <span id="score"></span>
+        </div>
+        <!--Intro component (disabled during work)  -->
+        <div class="intro">
+            <h2>Copy, Cut, Paste</h2>
+            <h3>Goal</h3>
+            <p>Arrange the jumbled text blocks in the correct order and duplicate certain blocks to create a structured sequence of 25 blocks in total. All actions shall be performed exclusively with keyboard commands.</p>
+            <h3>Tasks</h3>
+            <ol>
+                <li><b>Mark:</b> Use the SHIFT key in combination with the arrow keys to select a text block.</li>
+                <li><b>Cut and paste:</b> 
+                    <ul>
+                        <li>To cut a selected text block, press CTRL+X.</li>
+                        <li>NUse the arrow keys to navigate to the position where the text block is to be inserted.</li>
+                        <li>Press CTRL+V to insert the text block at the selected position.</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Copy and paste:</b>
+                    <ul>
+                        <li>Some blocks must be duplicated. Select these blocks as described.</li>
+                        <li>Press CTRL+C to copy the selected text block.</li>
+                        <li>Navigate to the insertion point and press CTRL+V to insert a copy of the text block.</li>
+                    </ul>
+                </li>
+            </ol>
+            <p>If all the blocks are arranged correctly, you can finish the test at the bottom of the page and see your time.<br> <em>  Do the test more often and try to become <b>faster</b>.  </em></p>
+
+        </div>
+        <div class="start">
+            <h2>Press START to begin</h2>
+            <button class="startstopBtn" onclick="start()">Start</button>
+        </div>
+
+        <!-- Form component (disabled when started)-->
+        <form action="#" onsubmit="submitForm(event)" class="hide">
+            <section class="inputBlock">
+               <h2>Arrange the blocks of text</h2>
+               <span class="tip">| CTRL+C - Copy | CTRL+V - Paste | CTRL+X - Cut | SHIFT+Arrow keys - Select |</span>
+               <label for="text">Click here to place cursor in text field. Navigation only with keyboard.</label>
+               
+               <textarea name="text" id="text">
+                </textarea>
+
+            </section>
+            <h3 class="wrongBox hide">Unfortunately not correct, try again</h3>
+            <button onclick="stop()" class="startstopBtn">Check</button>
+        </form>
+        
+        <!-- Finsh Component (only visible at end) -->
+        <div class="finished hide">
+            <h2>Amazing, you made it!</h2>
+            <p>Your time: <span class="time"></span> </p>
+            <h3 class="hide">New Highscore :-) </h3>
+            <button onclick="startAgain()" class="startstopBtn">Restart?</button>
+        </div>
+        <script src="./script-en.js"></script>
+    </main>
+    </body>
+</html>
